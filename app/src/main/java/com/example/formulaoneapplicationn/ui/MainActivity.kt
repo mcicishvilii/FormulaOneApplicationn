@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn
+package com.example.formulaoneapplicationn.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
