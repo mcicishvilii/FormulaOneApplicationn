@@ -9,5 +9,22 @@
         android:id="@+id/welcomeFragment"
         android:name="com.example.formulaoneapplicationn.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_creatAccountFragment"
+            app:destination="@id/creatAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.formulaoneapplicationn.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/creatAccountFragment"
+        android:name="com.example.formulaoneapplicationn.CreatAccountFragment"
+        android:label="fragment_creat_account"
+        tools:layout="@layout/fragment_creat_account" />
 </navigation>
