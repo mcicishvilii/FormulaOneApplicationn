@@ -7,7 +7,37 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.formulaoneapplicationn.WelcomeFragment"
+        android:name="com.example.formulaoneapplicationn.ui.welcome.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_creatAccountFragment"
+            app:destination="@id/creatAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.formulaoneapplicationn.ui.sign_in.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creatAccountFragment"
+        android:name="com.example.formulaoneapplicationn.ui.create_fragment.CreatAccountFragment"
+        android:label="fragment_creat_account"
+        tools:layout="@layout/fragment_creat_account" >
+        <action
+            android:id="@+id/action_creatAccountFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.formulaoneapplicationn.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
