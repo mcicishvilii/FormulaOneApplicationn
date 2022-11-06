@@ -1,6 +1,6 @@
 package com.example.formulaoneapplicationn.data.model.news
 
-import com.example.formulaone.domain.model.NewsDtItemDomain
+import com.example.formulaoneapplicationn.domain.model.NewsDtItemDomain
 
 data class NewsDtItem(
     val imgsrc: String,

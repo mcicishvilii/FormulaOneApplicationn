@@ -1,7 +1,7 @@
 package com.example.formulaoneapplicationn.data.repository
 
 import com.example.formulaone.data.model.raceResults.toRaceDomain
-import com.example.formulaone.domain.model.RaceDomain
+import com.example.formulaoneapplicationn.domain.model.RaceDomain
 import com.example.formulaone.domain.repository.RaceResultsRepository
 import com.example.formulaoneapplicationn.data.services.RaceService
 import javax.inject.Inject

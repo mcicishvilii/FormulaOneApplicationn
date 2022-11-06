@@ -1,6 +1,6 @@
 package com.example.formulaoneapplicationn.data.repository
 
-import com.example.formulaone.domain.repository.CurrentDriversStandingsRepository
+import com.example.formulaoneapplicationn.domain.repository.CurrentDriversStandingsRepository
 import com.example.formulaoneapplicationn.data.services.RaceService
 import com.example.formulaoneapplicationn.data.model.drivers.drivers_standings.DriverStandingsDto
 import javax.inject.Inject

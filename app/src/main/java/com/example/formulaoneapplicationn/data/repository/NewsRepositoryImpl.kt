@@ -1,7 +1,7 @@
 package com.example.formulaoneapplicationn.data.repository
 
 import com.example.formulaoneapplicationn.data.model.news.new_api.toArticleDomain
-import com.example.formulaone.domain.model.ArticleDomain
+import com.example.formulaoneapplicationn.domain.model.ArticleDomain
 import com.example.formulaone.domain.repository.NewsRepository
 import com.example.formulaoneapplicationn.data.services.NewsService
 import javax.inject.Inject

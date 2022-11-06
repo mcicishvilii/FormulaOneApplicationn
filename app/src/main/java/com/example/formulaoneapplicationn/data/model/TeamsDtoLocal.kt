@@ -3,7 +3,7 @@ package com.example.formulaoneapplicationn.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.formulaone.domain.model.TeamsDomain
+import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 
 @Entity(tableName = "gundebi")
 data class TeamsDtoLocal(
