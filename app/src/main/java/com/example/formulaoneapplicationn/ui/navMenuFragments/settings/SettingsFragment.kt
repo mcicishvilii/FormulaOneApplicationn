@@ -15,13 +15,13 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
 //    private val settingsAdapter: SettingsAdapter by lazy { SettingsAdapter() }
 
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var mauth: FirebaseAuth
 
     override fun viewCreated() {
-        auth = Firebase.auth
-        val user = auth.currentUser
+        mauth = Firebase.auth
+        val user = mauth.currentUser
         if (user != null) {
-            binding.tvUsersName.text = "hello dear \n${auth.currentUser?.email.toString()}"
+            binding.tvUsersName.text = "hello dear \n${mauth.currentUser?.email.toString()}"
         }
         changeButton()
     }
@@ -39,7 +39,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
     }
 
     private fun changeButton(){
-        val user = auth.currentUser
+        val user = mauth.currentUser
         if (user == null){
             binding.logoutbutton.visibility = View.GONE
             binding.tvLogin.visibility = View.VISIBLE
@@ -52,20 +52,18 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
 
     private fun logOut() {
         binding.logoutbutton.setOnClickListener {
-            auth.signOut()
+            mauth.signOut()
             findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToWelcomeFragment())
             checkLoggedInState()
         }
     }
 
     private fun checkLoggedInState() {
-        val user = auth.currentUser
+        val user = mauth.currentUser
         if (user == null) {
             binding.tvUsersName.text = ""
-            Toast.makeText(requireContext(), "logged out", Toast.LENGTH_SHORT)
-                .show()
         } else {
-            binding.tvUsersName.text = "hello  dear" + "  " + auth.currentUser?.email.toString()
+            binding.tvUsersName.text = "hello  dear" + "  " + mauth.currentUser?.email.toString()
             Toast.makeText(requireContext(), "logged in", Toast.LENGTH_SHORT)
                 .show()
         }

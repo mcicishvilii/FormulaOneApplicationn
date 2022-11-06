@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_f1_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FormulaOneApplicationn"
+        android:theme="@style/Theme.FormulaOneApplication"
         tools:targetApi="31">
 
         <meta-data

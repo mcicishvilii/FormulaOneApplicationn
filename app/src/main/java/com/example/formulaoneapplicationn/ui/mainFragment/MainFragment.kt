@@ -1,10 +1,6 @@
 package com.example.formulaone.ui.mainFragment
 
-import android.os.Build
-import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -20,13 +16,9 @@ import com.example.formulaoneapplicationn.databinding.FragmentMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 @AndroidEntryPoint
 class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
@@ -156,16 +148,16 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     fun weatherIcon(data:Int){
         if ( data in 0..3 ){
-            binding.ivWeatherIcon.setImageResource(R.drawable.sun_svgrepo_com)
+            binding.ivWeatherIcon.setImageResource(R.drawable.sun)
         }
         else if(data in 51..67){
-            binding.ivWeatherIcon.setImageResource(R.drawable.rain_svgrepo_com)
+            binding.ivWeatherIcon.setImageResource(R.drawable.rain)
         }
         else if(data in 95..99){
-            binding.ivWeatherIcon.setImageResource(R.drawable.thunder_svgrepo_com)
+            binding.ivWeatherIcon.setImageResource(R.drawable.thunder)
         }
         else{
-            binding.ivWeatherIcon.setImageResource(R.drawable.cloudy_svgrepo_com)
+            binding.ivWeatherIcon.setImageResource(R.drawable.clouds)
         }
     }
 }

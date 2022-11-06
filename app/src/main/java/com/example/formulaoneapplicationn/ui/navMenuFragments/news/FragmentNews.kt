@@ -2,6 +2,7 @@ package com.example.formulaone.ui.navMenuFragments.news
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -31,13 +32,14 @@ class FragmentNews : BaseFragment<FragmentFragmentNewsBinding>(FragmentFragmentN
 
     override fun listeners() {
         newsAdapter.setOnItemClickListener { article, _ ->
+
             val uri: Uri = Uri.parse(article.url) // missing 'http://' will cause crashed
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
     }
 
-        private fun setupRecycler() {
+    private fun setupRecycler() {
         binding.rvNews.apply {
             adapter = newsAdapter
             layoutManager =
