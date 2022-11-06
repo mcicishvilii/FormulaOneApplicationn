@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.schedule.upcoming
+package com.example.formulaone.ui.navMenuFragments.schedule.upcoming
 
 import android.os.Build
 import android.util.Log
@@ -9,14 +9,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.formulaoneapplicationn.common.Resource
 import com.example.formulaone.adapters.UpcomingRaceAdapter
+import com.example.formulaoneapplicationn.common.Resource
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentUpcomingRacesBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class UpcomingRacesFragment : BaseFragment<FragmentUpcomingRacesBinding>(FragmentUpcomingRacesBinding::inflate) {
@@ -30,6 +29,14 @@ class UpcomingRacesFragment : BaseFragment<FragmentUpcomingRacesBinding>(Fragmen
 
     override fun listeners() {
         buyTicket()
+        checkBoughtTickets()
+    }
+
+
+    private fun checkBoughtTickets(){
+        binding.ivCart.setOnClickListener {
+            findNavController().navigate(UpcomingRacesFragmentDirections.actionUpcomingRacesFragmentToTicket())
+        }
     }
 
     private fun buyTicket(){
@@ -41,9 +48,6 @@ class UpcomingRacesFragment : BaseFragment<FragmentUpcomingRacesBinding>(Fragmen
                         date = venue.date
                     )
                 ))
-//                Snackbar.make(binding.root,
-//                    "you bought ticket for ${venue.raceName}",
-//                    Snackbar.LENGTH_SHORT).show()
             }
         }
     }

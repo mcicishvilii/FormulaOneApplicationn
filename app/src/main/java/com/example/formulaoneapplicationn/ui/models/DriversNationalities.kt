@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.models
+package com.example.formulaone.ui.models
 
 enum class DriversNationalities(val nationality:String){
     THAI("Thai"),

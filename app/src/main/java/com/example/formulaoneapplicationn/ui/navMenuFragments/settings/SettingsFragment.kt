@@ -1,10 +1,8 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.settings
+package com.example.formulaone.ui.navMenuFragments.settings
 
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.formulaone.databinding.FragmentSettingsBinding
-import com.example.formulaone.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentSettingsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -23,7 +21,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         auth = Firebase.auth
         val user = auth.currentUser
         if (user != null) {
-            binding.tvUsersName.text = auth.currentUser?.email.toString()
+            binding.tvUsersName.text = "hello dear \n${auth.currentUser?.email.toString()}"
         }
         changeButton()
     }
@@ -67,7 +65,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
             Toast.makeText(requireContext(), "logged out", Toast.LENGTH_SHORT)
                 .show()
         } else {
-            binding.tvUsersName.text = auth.currentUser?.email.toString()
+            binding.tvUsersName.text = "hello  dear" + "  " + auth.currentUser?.email.toString()
             Toast.makeText(requireContext(), "logged in", Toast.LENGTH_SHORT)
                 .show()
         }

@@ -1,12 +1,14 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.drivers.list
+package com.example.formulaone.ui.navMenuFragments.drivers.list
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.formulaoneapplicationn.common.Resource
-import com.example.formulaone.data.remote.drivers.drivers_standings.DriverStandingsDto
-import com.example.formulaone.domain.model.remote.RaceDomain
 import com.example.formulaone.domain.use_case.drivers.CurrentDriversStandingsUseCase
 import com.example.formulaone.domain.use_case.schedule.RaceDetailsUseCase
+import com.example.formulaoneapplicationn.common.Resource
+import com.example.formulaoneapplicationn.data.model.drivers.drivers_standings.DriverStandingsDto
+import com.example.formulaoneapplicationn.domain.model.RaceDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,6 +39,7 @@ class DriversViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun getRaceResultsDetails(){
         raceDetailsUseCase().onEach { result ->
             when (result){

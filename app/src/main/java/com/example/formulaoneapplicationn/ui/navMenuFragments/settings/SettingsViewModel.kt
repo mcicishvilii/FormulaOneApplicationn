@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.settings
+package com.example.formulaone.ui.navMenuFragments.settings
 
 import androidx.lifecycle.ViewModel
 

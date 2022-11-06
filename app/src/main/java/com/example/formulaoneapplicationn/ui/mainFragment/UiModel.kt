@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.mainFragment
+package com.example.formulaone.ui.mainFragment
 
 data class UiModel(
     val winner: String?,

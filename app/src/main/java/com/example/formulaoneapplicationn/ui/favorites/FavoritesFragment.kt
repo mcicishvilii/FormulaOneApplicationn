@@ -1,10 +1,11 @@
-package com.example.formulaoneapplicationn.ui.favorites
+package com.example.formulaone.ui.favorites
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.formulaone.ui.adapters.ConstructorsAdapter
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint

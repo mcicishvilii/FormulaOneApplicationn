@@ -1,10 +1,10 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.teams
+package com.example.formulaone.ui.navMenuFragments.teams
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.formulaoneapplicationn.common.Resource
 import com.example.formulaone.domain.use_case.teams.*
-import com.example.formulaone.domain.model.remote.TeamsDomain
+import com.example.formulaoneapplicationn.common.Resource
+import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +26,6 @@ class TeamsViewModel @Inject constructor(
     init {
         getTeams()
     }
-
 
     private fun getTeams(){
         getTeamsListUseCase().onEach { result ->

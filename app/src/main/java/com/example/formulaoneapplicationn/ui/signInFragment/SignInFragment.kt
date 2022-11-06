@@ -1,12 +1,10 @@
-package com.example.formulaoneapplicationn.ui.signInFragment
+package com.example.formulaone.ui.signInFragment
 
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
-import com.example.formulaone.databinding.FragmentSignInBinding
-import com.example.formulaone.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +38,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
         val email = binding.etEmailImpl.text.toString()
         val password = binding.etPasswordImpl.text.toString()
 
-        if(email.isNotEmpty() && password.isNotEmpty()){
+        if(email.isNotEmpty() && password.isNotEmpty() && isValidEmail()){
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     auth.signInWithEmailAndPassword(email,password).await()
@@ -56,6 +54,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
             }
         }
     }
+
+    private fun isValidEmail(): Boolean =
+        android.util.Patterns.EMAIL_ADDRESS.matcher(binding?.etEmailImpl?.text.toString()).matches()
+
 
     private fun checkLoggedInState() {
         val user = auth.currentUser

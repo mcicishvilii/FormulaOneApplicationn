@@ -1,9 +1,7 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.schedule
+package com.example.formulaone.ui.navMenuFragments.schedule
 
 import androidx.viewpager2.widget.ViewPager2
-import com.example.formulaone.adapters.ViewPagerAdapter
-import com.example.formulaone.common.bases.BaseFragment
-import com.example.formulaone.databinding.FragmentScheduleBinding
+import com.example.formulaone.ui.adapters.ViewPagerAdapter
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentScheduleBinding
 import com.google.android.material.tabs.TabLayout
