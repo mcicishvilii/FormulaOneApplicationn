@@ -38,6 +38,7 @@ class NewsAdapter :
             binding.apply {
                 tvNewsText.text = model?.title
                 tvDesription.text = model?.description
+
                 Glide.with(this.ivNewsImage)
                     .load(model?.urlToImage)
                     .into(ivNewsImage)
