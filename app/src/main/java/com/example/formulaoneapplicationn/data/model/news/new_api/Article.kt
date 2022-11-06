@@ -1,7 +1,7 @@
 package com.example.formulaoneapplicationn.data.model.news.new_api
 
 
-import com.example.formulaone.domain.model.ArticleDomain
+import com.example.formulaoneapplicationn.domain.model.ArticleDomain
 import com.google.gson.annotations.SerializedName
 
 data class Article(

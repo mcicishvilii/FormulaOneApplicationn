@@ -5,9 +5,9 @@ import com.example.formulaoneapplicationn.data.model.TeamsDtoLocal
 import com.example.formulaoneapplicationn.data.model.teams.ToTeamsDomain
 import com.example.formulaoneapplicationn.data.model.toModel
 import com.example.formulaone.domain.repository.TeamsRepository
-import com.example.formulaone.domain.model.TeamsDomain
+import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 import com.example.formulaoneapplicationn.data.services.RaceService
-import com.example.formulaone.domain.model.toRoomDto
+import com.example.formulaoneapplicationn.domain.model.toRoomDto
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
