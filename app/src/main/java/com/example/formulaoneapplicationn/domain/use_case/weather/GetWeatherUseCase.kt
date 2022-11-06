@@ -1,8 +1,8 @@
 package com.example.formulaone.domain.use_case.weather
 
-import com.example.formulaone.common.Resource
-import com.example.formulaone.data.model.weather.WeatherDataDto
-import com.example.formulaone.data.repository.RaceScheduleRepositoryImpl
+import com.example.formulaoneapplicationn.common.Resource
+import com.example.formulaoneapplicationn.data.model.weather.WeatherDataDto
+import com.example.formulaoneapplicationn.data.repository.RaceScheduleRepositoryImpl
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
