@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/ticket">
 
     <fragment
         android:id="@+id/welcomeFragment"
@@ -187,6 +187,9 @@
             android:name="ticketInfo"
             app:argType="com.example.formulaone.ui.navMenuFragments.schedule.upcoming.TicketInfo"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentTickets_to_creditCardBottomFragment22"
+            app:destination="@id/creditCardBottomFragment2" />
     </fragment>
 
     <fragment
@@ -195,8 +198,16 @@
         android:label="fragment_ticket"
         tools:layout="@layout/fragment_ticket" />
     <fragment
-        android:id="@+id/test"
-        android:name="com.example.formulaone.ui.Test"
-        android:label="Test" />
+        android:id="@+id/creditCardBottomFragment2"
+        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.tickets.BoughtTickets.credit_card.CreditCardBottomFragment"
+        android:label="CreditCardBottomFragment" >
+        <argument
+            android:name="tickets"
+            app:argType="com.example.formulaone.ui.navMenuFragments.schedule.upcoming.TicketInfo"
+            app:nullable="true" />
+    </fragment>
+
+
+    \\
 
 </navigation>

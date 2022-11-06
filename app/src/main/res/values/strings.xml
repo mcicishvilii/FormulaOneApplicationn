@@ -31,5 +31,8 @@
     <string name="search_here">search here</string>
     <string name="country">Country</string>
     <string name="team_name">Team Name</string>
+    <string name="yes_sure">YES</string>
+    <string name="you_bought_ticket">Thanks! you bought ticket! check your cart!</string>
+    <string name="canceled">you canceled purchase process</string>
     <string name="check_your_tickets_here">Check Your Tickets Here</string>
 </resources>
