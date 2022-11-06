@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.drivers
+package com.example.formulaone.ui.navMenuFragments.drivers
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

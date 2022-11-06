@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.teams
+package com.example.formulaone.ui.navMenuFragments.teams
 
 import android.util.Log
 import android.widget.Toast
@@ -9,16 +9,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.formulaone.adapters.ConstructorsAdapter
-import com.example.formulaone.R
+import com.example.formulaone.ui.adapters.ConstructorsAdapter
+import com.example.formulaoneapplicationn.R
 import com.example.formulaoneapplicationn.common.Resource
-import com.example.formulaone.domain.model.remote.TeamsDomain
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentTeamsBinding
+import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class TeamsFragment : BaseFragment<FragmentTeamsBinding>(FragmentTeamsBinding::inflate) {
@@ -36,7 +35,7 @@ class TeamsFragment : BaseFragment<FragmentTeamsBinding>(FragmentTeamsBinding::i
 
     override fun listeners() {
         addToFavourites()
-        binding.tvTeamListHeader.setOnClickListener {
+        binding.btnFavs.setOnClickListener {
             findNavController().navigate(R.id.favoritesFragment)
         }
     }
@@ -87,7 +86,6 @@ class TeamsFragment : BaseFragment<FragmentTeamsBinding>(FragmentTeamsBinding::i
 
     private fun search() {
         binding.searchView.doOnTextChanged { text, _, _, _ ->
-            Log.d("mcicishvili", text.toString())
             if (!text.isNullOrEmpty()) {
                 viewModel.searh(text.toString())
             }

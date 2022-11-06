@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.schedule
+package com.example.formulaone.ui.navMenuFragments.schedule
 
 import androidx.lifecycle.ViewModel
 

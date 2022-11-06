@@ -1,10 +1,10 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.news
+package com.example.formulaone.ui.navMenuFragments.news
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.formulaoneapplicationn.common.Resource
-import com.example.formulaone.domain.model.remote.ArticleDomain
 import com.example.formulaone.domain.use_case.news.NewsUseCase
+import com.example.formulaoneapplicationn.common.Resource
+import com.example.formulaoneapplicationn.domain.model.ArticleDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

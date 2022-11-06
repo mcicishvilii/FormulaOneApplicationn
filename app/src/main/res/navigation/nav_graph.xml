@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.formulaoneapplicationn.ui.welcomeFragment.WelcomeFragment"
+        android:name="com.example.formulaone.ui.welcomeFragment.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.formulaoneapplicationn.ui.mainFragment.MainFragment"
+        android:name="com.example.formulaone.ui.mainFragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
 
@@ -64,12 +64,17 @@
             android:id="@+id/action_driversFragment_to_driverDetailsFragment"
             app:destination="@id/driverDetailsFragment" />
 
+        <action
+            android:id="@+id/action_upcomingRacesFragment_to_ticket"
+            app:destination="@id/ticket" />
+
+
 
     </fragment>
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.formulaoneapplicationn.ui.signInFragment.SignInFragment"
+        android:name="com.example.formulaone.ui.signInFragment.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -79,7 +84,7 @@
 
     <fragment
         android:id="@+id/driversFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.drivers.list.DriversFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.drivers.list.DriversFragment"
         android:label="fragment_drivers"
         tools:layout="@layout/fragment_drivers">
         <action
@@ -89,7 +94,7 @@
 
     <fragment
         android:id="@+id/teamsFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.teams.TeamsFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.teams.TeamsFragment"
         android:label="fragment_teams"
         tools:layout="@layout/fragment_teams" >
         <action
@@ -99,7 +104,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.settings.SettingsFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -112,7 +117,7 @@
 
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.formulaoneapplicationn.ui.favorites.FavoritesFragment"
+        android:name="com.example.formulaone.ui.favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" >
         <action
@@ -124,7 +129,7 @@
         app:popUpTo="@id/welcomeFragment" />
     <fragment
         android:id="@+id/scheduleFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.schedule.ScheduleFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.schedule.ScheduleFragment"
         android:label="fragment_schedule"
         tools:layout="@layout/fragment_schedule" >
         <action
@@ -137,21 +142,24 @@
 
     <fragment
         android:id="@+id/recentRacesFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.schedule.recent.RecentRacesFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.schedule.recent.RecentRacesFragment"
         android:label="fragment_recent_races"
         tools:layout="@layout/fragment_recent_races" />
     <fragment
         android:id="@+id/upcomingRacesFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.schedule.upcoming.UpcomingRacesFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.schedule.upcoming.UpcomingRacesFragment"
         android:label="fragment_upcoming_races"
         tools:layout="@layout/fragment_upcoming_races" >
         <action
             android:id="@+id/action_upcomingRacesFragment_to_fragmentTickets"
             app:destination="@id/fragmentTickets" />
+        <action
+            android:id="@+id/action_upcomingRacesFragment_to_ticket"
+            app:destination="@id/ticket" />
     </fragment>
     <fragment
         android:id="@+id/driverDetailsFragment"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.drivers.details.DriverDetailsFragment"
+        android:name="com.example.formulaone.ui.navMenuFragments.drivers.details.DriverDetailsFragment"
         android:label="fragment_driver_details"
         tools:layout="@layout/fragment_driver_details" >
         <argument
@@ -167,12 +175,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentNews"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.news.FragmentNews"
+        android:name="com.example.formulaone.ui.navMenuFragments.news.FragmentNews"
         android:label="fragment_fragment_news"
         tools:layout="@layout/fragment_fragment_news" />
     <fragment
         android:id="@+id/fragmentTickets"
-        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.tickets.FragmentTickets"
+        android:name="com.example.formulaone.ui.navMenuFragments.tickets.FragmentTickets"
         android:label="fragment_fragment_tickets"
         tools:layout="@layout/fragment_fragment_tickets" >
         <argument
@@ -180,5 +188,15 @@
             app:argType="com.example.formulaone.ui.navMenuFragments.schedule.upcoming.TicketInfo"
             app:nullable="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ticket"
+        android:name="com.example.formulaone.ui.navMenuFragments.tickets.BoughtTicketsFragment"
+        android:label="fragment_ticket"
+        tools:layout="@layout/fragment_ticket" />
+    <fragment
+        android:id="@+id/test"
+        android:name="com.example.formulaone.ui.Test"
+        android:label="Test" />
 
 </navigation>

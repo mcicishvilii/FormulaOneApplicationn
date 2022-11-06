@@ -1,12 +1,10 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.drivers.details
+package com.example.formulaone.ui.navMenuFragments.drivers.details
 
 import androidx.navigation.fragment.navArgs
-import com.example.formulaone.databinding.FragmentDriverDetailsBinding
 import com.example.formulaoneapplicationn.R
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentDriverDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class DriverDetailsFragment : BaseFragment<FragmentDriverDetailsBinding>(FragmentDriverDetailsBinding::inflate){

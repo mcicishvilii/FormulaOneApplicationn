@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.welcomeFragment
+package com.example.formulaone.ui.welcomeFragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

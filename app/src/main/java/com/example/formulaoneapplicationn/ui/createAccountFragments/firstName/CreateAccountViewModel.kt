@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.createAccountFragments.firstName
+package com.example.formulaone.ui.createAccountFragments.firstName
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

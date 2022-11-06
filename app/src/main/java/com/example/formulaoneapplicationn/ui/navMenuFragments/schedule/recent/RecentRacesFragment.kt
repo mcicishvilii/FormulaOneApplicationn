@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.ui.navMenuFragments.schedule.recent
+package com.example.formulaone.ui.navMenuFragments.schedule.recent
 
 import android.os.Build
 import android.util.Log
@@ -8,14 +8,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.formulaone.ui.adapters.SchedulesAdapter.RecentRacesAdapter
 import com.example.formulaoneapplicationn.common.Resource
-import com.example.formulaone.adapters.SchedulesAdapter.RecentRacesAdapter
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
 import com.example.formulaoneapplicationn.databinding.FragmentRecentRacesBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class RecentRacesFragment :
@@ -63,8 +62,6 @@ class RecentRacesFragment :
                         }
                         is Resource.Success -> {
                             myAdapter.submitList(it.data)
-
-                            Log.d("sia recent",it.data.last().toString())
                         }
 
                     }
