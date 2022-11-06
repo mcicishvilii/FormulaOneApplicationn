@@ -27,4 +27,11 @@ This app is a clone (or tries to be) of Official F1 application available on mar
 - Tab Navigation
 - Launcher Icon
 
-<img src = "https://user-images.githubusercontent.com/83747561/200179227-8dd2cfd8-a434-45f2-b7a0-0e10e853158f.jpg" width = "200">
+<img src = "https://user-images.githubusercontent.com/83747561/200179227-8dd2cfd8-a434-45f2-b7a0-0e10e853158f.jpg" width = "200"> |
+<img src = "https://user-images.githubusercontent.com/83747561/200179380-6f6333a5-50eb-4b76-924a-26c8d3294b38.jpg" width = "200"> | 
+<img src = "https://user-images.githubusercontent.com/83747561/200179398-33fa328c-6489-4937-b460-51b4fc55da1f.jpg" width = "200"> |
+<img src = "https://user-images.githubusercontent.com/83747561/200179404-7a66b37c-ac25-4248-afa8-89f25bb171e5.jpg" width = "200"> |
+<img src = "https://user-images.githubusercontent.com/83747561/200179409-f2b177d7-eb87-4f2d-a6d5-e1c652f269dc.jpg" width = "200"> 
+
+
+
