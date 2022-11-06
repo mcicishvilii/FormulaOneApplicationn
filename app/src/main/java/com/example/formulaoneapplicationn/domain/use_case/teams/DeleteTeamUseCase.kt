@@ -1,7 +1,7 @@
 package com.example.formulaone.domain.use_case.teams
 
-import com.example.formulaone.data.model.TeamsDtoLocal
 import com.example.formulaone.domain.repository.TeamsRepository
+import com.example.formulaoneapplicationn.data.model.TeamsDtoLocal
 import javax.inject.Inject
 
 class DeleteTeamUseCase @Inject constructor(

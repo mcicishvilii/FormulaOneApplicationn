@@ -2,9 +2,9 @@ package com.example.formulaone.domain.use_case.news
 
 
 import android.util.Log
-import com.example.formulaone.common.Resource
 import com.example.formulaoneapplicationn.domain.model.ArticleDomain
 import com.example.formulaone.domain.repository.NewsRepository
+import com.example.formulaoneapplicationn.common.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
