@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ticket">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/welcomeFragment"
@@ -194,7 +194,7 @@
 
     <fragment
         android:id="@+id/ticket"
-        android:name="com.example.formulaone.ui.navMenuFragments.tickets.BoughtTicketsFragment"
+        android:name="com.example.formulaoneapplicationn.ui.navMenuFragments.tickets.BoughtTickets.BoughtTicketsFragment"
         android:label="fragment_ticket"
         tools:layout="@layout/fragment_ticket" />
     <fragment

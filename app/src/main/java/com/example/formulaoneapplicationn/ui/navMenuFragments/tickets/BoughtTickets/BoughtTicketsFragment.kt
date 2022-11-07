@@ -1,4 +1,4 @@
-package com.example.formulaone.ui.navMenuFragments.tickets
+package com.example.formulaoneapplicationn.ui.navMenuFragments.tickets.BoughtTickets
 
 import android.content.Intent
 import android.widget.Toast
@@ -7,16 +7,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.formulaone.ui.adapters.SchedulesAdapter.BoughtTIcketsAdapter
 import com.example.formulaone.ui.navMenuFragments.tickets.BoughtTickets.TicketViewModel
 import com.example.formulaoneapplicationn.common.bases.BaseFragment
-import com.example.formulaoneapplicationn.data.model.TicketsEntity
 import com.example.formulaoneapplicationn.databinding.FragmentTicketBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
