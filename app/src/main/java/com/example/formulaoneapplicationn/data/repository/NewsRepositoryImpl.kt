@@ -1,0 +1,24 @@
+package com.example.formulaoneapplicationn.data.repository
+
+import com.example.formulaoneapplicationn.data.model.news.new_api.toArticleDomain
+import com.example.formulaoneapplicationn.domain.model.ArticleDomain
+import com.example.formulaone.domain.repository.NewsRepository
+import com.example.formulaoneapplicationn.data.services.NewsService
+import javax.inject.Inject
+
+class NewsRepositoryImpl @Inject constructor(
+    private val api: NewsService
+) : NewsRepository {
+
+    override suspend fun getNews(): List<ArticleDomain> {
+        val response = api.getNews(
+            "formula one",
+            "6ce7c585fe714572ad745ea44c378403"
+        )
+        return if (response.isSuccessful) {
+            response.body()?.articles!!.map{it.toArticleDomain() }
+        } else {
+            emptyList()
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "717499214298",
+    "project_id": "f1mishooto",
+    "storage_bucket": "f1mishooto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717499214298:android:c77c203010402b5cfff8e3",
+        "android_client_info": {
+          "package_name": "com.example.formulaoneapplicationn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717499214298-8u4dnblrc88mcneavev0ngdvb3bsq87n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrKDzw6Z69ICSFqp8VTl-Gjr3Aw3CkMpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717499214298-8u4dnblrc88mcneavev0ngdvb3bsq87n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
