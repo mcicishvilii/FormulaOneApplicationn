@@ -1,7 +1,6 @@
-package com.example.formulaone.data.model.news.new_api
+package com.example.formulaoneapplicationn.data.model.news
 
 
-import com.example.formulaoneapplicationn.data.model.news.new_api.Article
 import com.google.gson.annotations.SerializedName
 
 data class F1NewsDto(

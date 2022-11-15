@@ -1,10 +1,10 @@
 package com.example.formulaoneapplicationn.data.repository
 
 import com.example.formulaoneapplicationn.data.daos.TeamsDao
-import com.example.formulaoneapplicationn.data.model.TeamsDtoLocal
 import com.example.formulaoneapplicationn.data.model.teams.ToTeamsDomain
 import com.example.formulaoneapplicationn.data.model.toModel
 import com.example.formulaone.domain.repository.TeamsRepository
+import com.example.formulaoneapplicationn.data.model.TeamsEntity
 import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 import com.example.formulaoneapplicationn.data.services.RaceService
 import com.example.formulaoneapplicationn.domain.model.toRoomDto
@@ -17,9 +17,9 @@ class TeamsRepositoryImpl @Inject constructor(
     private val teamsDao: TeamsDao
 ) : TeamsRepository {
 
-    override suspend fun getTeamsData(): List<TeamsDomain> {
-        return api.getDriversList().MRData.ConstructorTable.Constructors!!.map{it.ToTeamsDomain()}
-    }
+//    override suspend fun getTeamsData(): List<TeamsDomain> {
+//        return api.getDriversList().MRData.ConstructorTable.Constructors!!.map{it.ToTeamsDomain()}
+//    }
 
     override fun getTeams(): Flow<List<TeamsDomain>> {
         return teamsDao.getAll().map {it.map { it.toModel() }}
@@ -29,7 +29,7 @@ class TeamsRepositoryImpl @Inject constructor(
         teamsDao.insert(team.toRoomDto())
     }
 
-    override suspend fun deleteTeam(team: TeamsDtoLocal) {
+    override suspend fun deleteTeam(team: TeamsEntity) {
         teamsDao.delete(team)
     }
 

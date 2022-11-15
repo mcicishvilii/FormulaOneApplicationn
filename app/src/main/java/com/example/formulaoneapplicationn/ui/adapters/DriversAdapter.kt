@@ -6,15 +6,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.formulaoneapplicationn.R
-import com.example.formulaoneapplicationn.data.model.drivers.drivers_standings.DriverStandingsDto
 import com.example.formulaoneapplicationn.databinding.SingleDriverLayoutBinding
+import com.example.formulaoneapplicationn.domain.model.DriverStandingDomain
 
 class DriversAdapter :
-    ListAdapter<DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding, DriversAdapter.DriversViewHolder>(
+    ListAdapter<DriverStandingDomain, DriversAdapter.DriversViewHolder>(
         DriversDiffCallBack()
     ) {
 
-    private lateinit var itemClickListener: (DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding, Int) -> Unit
+    private lateinit var itemClickListener: (DriverStandingDomain, Int) -> Unit
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
@@ -31,7 +31,7 @@ class DriversAdapter :
 
     inner class DriversViewHolder(private val binding: SingleDriverLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        private var model: DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding? =
+        private var model: DriverStandingDomain? =
             null
 
         fun bindData() {
@@ -69,23 +69,24 @@ class DriversAdapter :
 
 
     }
-    fun setOnItemClickListener(clickListener: (DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding, Int) -> Unit) {
+
+    fun setOnItemClickListener(clickListener: (DriverStandingDomain, Int) -> Unit) {
         itemClickListener = clickListener
     }
 }
 
 class DriversDiffCallBack :
-    DiffUtil.ItemCallback<DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding>() {
+    DiffUtil.ItemCallback<DriverStandingDomain>() {
     override fun areItemsTheSame(
-        oldItem: DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding,
-        newItem: DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding
+        oldItem: DriverStandingDomain,
+        newItem: DriverStandingDomain
     ): Boolean {
         return oldItem.Driver.driverId == newItem.Driver.driverId
     }
 
     override fun areContentsTheSame(
-        oldItem: DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding,
-        newItem: DriverStandingsDto.MRDataX.StandingsTableX.StandingsListsX.DriverStanding
+        oldItem: DriverStandingDomain,
+        newItem: DriverStandingDomain
     ): Boolean {
         return oldItem == newItem
     }

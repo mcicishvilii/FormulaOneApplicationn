@@ -1,6 +1,6 @@
 package com.example.formulaoneapplicationn.data.repository
 
-import com.example.formulaoneapplicationn.data.model.news.new_api.toArticleDomain
+import com.example.formulaoneapplicationn.data.model.news.toArticleDomain
 import com.example.formulaoneapplicationn.domain.model.ArticleDomain
 import com.example.formulaone.domain.repository.NewsRepository
 import com.example.formulaoneapplicationn.data.services.NewsService

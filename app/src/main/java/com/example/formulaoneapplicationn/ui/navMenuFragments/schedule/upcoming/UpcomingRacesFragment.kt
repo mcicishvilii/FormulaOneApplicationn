@@ -20,11 +20,11 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class UpcomingRacesFragment : BaseFragment<FragmentUpcomingRacesBinding>(FragmentUpcomingRacesBinding::inflate) {
     private val upcomingRaceAdapter: UpcomingRaceAdapter by lazy { UpcomingRaceAdapter() }
-    private val upcomingRacesViewModel: UpcomingRacesViewModel by viewModels()
+//    private val upcomingRacesViewModel: UpcomingRacesViewModel by viewModels()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun viewCreated() {
-        observe()
+//        observe()
     }
 
     override fun listeners() {
@@ -63,27 +63,27 @@ class UpcomingRacesFragment : BaseFragment<FragmentUpcomingRacesBinding>(Fragmen
                 )
         }
     }
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun observe() {
-        setupRecycler()
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                upcomingRacesViewModel.state.collectLatest {
-                    when (it) {
-                        is Resource.Error -> {
-
-                        }
-                        is Resource.Loading -> {
-
-                        }
-                        is Resource.Success -> {
-                            upcomingRaceAdapter.submitList(it.data)
-                            Log.d("sia",it.data.toString())
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    private fun observe() {
+//        setupRecycler()
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                upcomingRacesViewModel.state.collectLatest {
+//                    when (it) {
+//                        is Resource.Error -> {
+//
+//                        }
+//                        is Resource.Loading -> {
+//
+//                        }
+//                        is Resource.Success -> {
+//                            upcomingRaceAdapter.submitList(it.data)
+//                            Log.d("sia",it.data.toString())
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 }

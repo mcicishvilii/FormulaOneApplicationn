@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TeamsViewModel @Inject constructor(
-    private val getTeamsListUseCase: GetTeamsListUseCase,
+//    private val getTeamsListUseCase: GetTeamsListUseCase,
     private val insertTeamUseCase: InsertTeamUseCase,
 ) : ViewModel() {
 
@@ -24,21 +24,21 @@ class TeamsViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     init {
-        getTeams()
+//        getTeams()
     }
 
-    private fun getTeams(){
-        getTeamsListUseCase().onEach { result ->
-            when (result){
-                is Resource.Success -> {
-                    filteredList = result.data
-                    _state.value = Resource.Success(result.data)
-                }
-                is Resource.Error -> _state.value = Resource.Error("woops!")
-                is Resource.Loading -> _state.value = Resource.Loading(true)
-            }
-        }.launchIn(viewModelScope)
-    }
+//    private fun getTeams(){
+//        getTeamsListUseCase().onEach { result ->
+//            when (result){
+//                is Resource.Success -> {
+//                    filteredList = result.data
+//                    _state.value = Resource.Success(result.data)
+//                }
+//                is Resource.Error -> _state.value = Resource.Error("woops!")
+//                is Resource.Loading -> _state.value = Resource.Loading(true)
+//            }
+//        }.launchIn(viewModelScope)
+//    }
 
     fun insertTeam(team: TeamsDomain){
         CoroutineScope(Dispatchers.IO).launch {

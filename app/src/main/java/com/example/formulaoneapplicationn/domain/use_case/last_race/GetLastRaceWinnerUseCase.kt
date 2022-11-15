@@ -11,20 +11,20 @@ import java.io.IOException
 import javax.inject.Inject
 
 // using as the name suggests
-class GetLastRaceWinnerUseCase @Inject constructor(
-    private val repository: LastRaceRepository
-) {
-    operator fun invoke(): Flow<Resource<LastRaceDto>> = flow{
-        try {
-            emit(Resource.Loading(true))
-            val circuit = repository.getLastRaceWinner()
-            emit(Resource.Success(circuit))
-        }
-        catch (e: HttpException){
-            Log.d("tag", "error")
-        }
-        catch (e: IOException){
-            Log.d("tag", "io error")
-        }
-    }
-}
+//class GetLastRaceWinnerUseCase @Inject constructor(
+//    private val repository: LastRaceRepository
+//) {
+//    operator fun invoke(): Flow<Resource<LastRaceDto>> = flow{
+//        try {
+//            emit(Resource.Loading(true))
+//            val circuit = repository.getLastRaceWinner()
+//            emit(Resource.Success(circuit))
+//        }
+//        catch (e: HttpException){
+//            Log.d("tag", "error")
+//        }
+//        catch (e: IOException){
+//            Log.d("tag", "io error")
+//        }
+//    }
+//}

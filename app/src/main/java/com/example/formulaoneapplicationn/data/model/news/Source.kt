@@ -1,4 +1,4 @@
-package com.example.formulaoneapplicationn.data.model.news.new_api
+package com.example.formulaoneapplicationn.data.model.news
 
 
 import com.google.gson.annotations.SerializedName
