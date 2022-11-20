@@ -27,17 +27,23 @@ class TeamsViewModel @Inject constructor(
         getTeams()
     }
 
-    private fun getTeams(){
-        getTeamsListUseCase().onEach { result ->
-            when (result){
-                is Resource.Success -> {
-                    filteredList = result.data
-                    _state.value = Resource.Success(result.data)
+    fun getTeams() {
+        viewModelScope.launch {
+            getTeamsListUseCase().onEach { news ->
+                when (news) {
+                    is Resource.Success -> {
+                        filteredList = news.data
+                        _state.value = Resource.Success(news.data)
+                    }
+                    is Resource.Error -> {
+                        _state.value = Resource.Error("woops!")
+                    }
+                    is Resource.Loading -> {
+                        _state.value = Resource.Loading(true)
+                    }
                 }
-                is Resource.Error -> _state.value = Resource.Error("woops!")
-                is Resource.Loading -> _state.value = Resource.Loading(true)
-            }
-        }.launchIn(viewModelScope)
+            }.launchIn(viewModelScope)
+        }
     }
 
     fun insertTeam(team: TeamsDomain){
@@ -46,7 +52,7 @@ class TeamsViewModel @Inject constructor(
         }
     }
 
-    fun searh(query:String) {
+    fun search(query:String) {
         val searchedList = filteredList.filter {
             it.nationality.toString().lowercase().contains(query.lowercase())
         }

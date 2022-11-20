@@ -12,20 +12,20 @@ import javax.inject.Inject
 
 
 // using as the name suggests
-class GetLastRaceCircuitUseCase @Inject constructor(
-    private val repository: LastRaceRepository
-) {
-    operator fun invoke(): Flow<Resource<LastRaceDto>> = flow{
-        try {
-            emit(Resource.Loading(true))
-            val winner = repository.getLastRaceCictuit()
-            emit(Resource.Success(winner))
-        }
-        catch (e:HttpException){
-            Log.d("tag", "error")
-        }
-        catch (e:IOException){
-            Log.d("tag", "io error")
-        }
-    }
-}
+//class GetLastRaceCircuitUseCase @Inject constructor(
+//    private val repository: LastRaceRepository
+//) {
+//    operator fun invoke(): Flow<Resource<LastRaceDto>> = flow{
+//        try {
+//            emit(Resource.Loading(true))
+//            val winner = repository.getLastRaceCictuit()
+//            emit(Resource.Success(winner))
+//        }
+//        catch (e:HttpException){
+//            Log.d("tag", "error")
+//        }
+//        catch (e:IOException){
+//            Log.d("tag", "io error")
+//        }
+//    }
+//}

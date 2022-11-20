@@ -87,7 +87,7 @@ class TeamsFragment : BaseFragment<FragmentTeamsBinding>(FragmentTeamsBinding::i
     private fun search() {
         binding.searchView.doOnTextChanged { text, _, _, _ ->
             if (!text.isNullOrEmpty()) {
-                viewModel.searh(text.toString())
+                viewModel.search(text.toString())
             }
             else{
                 constructorsAdapter.submitList(filteredList)

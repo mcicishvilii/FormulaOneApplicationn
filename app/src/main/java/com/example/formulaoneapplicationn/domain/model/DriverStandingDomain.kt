@@ -1,10 +1,9 @@
-package com.example.formulaoneapplicationn.data.model.drivers.drivers_standings
+package com.example.formulaoneapplicationn.domain.model
 
 import com.example.formulaoneapplicationn.data.model.drivers.drivers_standings.Constructor
 import com.example.formulaoneapplicationn.data.model.drivers.drivers_standings.Driver
-import com.example.formulaoneapplicationn.domain.model.DriverStandingDomain
 
-data class DriverStanding(
+data class DriverStandingDomain(
     val Constructors: List<Constructor>,
     val Driver: Driver,
     val points: String,
@@ -12,9 +11,3 @@ data class DriverStanding(
     val positionText: String,
     val wins: String
 )
-
-fun DriverStanding.toDomain(): DriverStandingDomain {
-    return DriverStandingDomain(
-        Constructors, Driver, points, position, positionText, wins
-    )
-}

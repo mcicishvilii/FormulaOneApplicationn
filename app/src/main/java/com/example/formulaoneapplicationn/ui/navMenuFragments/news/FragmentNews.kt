@@ -32,7 +32,6 @@ class FragmentNews : BaseFragment<FragmentFragmentNewsBinding>(FragmentFragmentN
 
     override fun listeners() {
         newsAdapter.setOnItemClickListener { article, _ ->
-
             val uri: Uri = Uri.parse(article.url) // missing 'http://' will cause crashed
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)

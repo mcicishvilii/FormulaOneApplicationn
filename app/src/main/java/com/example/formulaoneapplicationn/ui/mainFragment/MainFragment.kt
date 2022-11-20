@@ -31,7 +31,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     private lateinit var tabLayout: TabLayout
 
     override fun viewCreated() {
-        mainViewModel.getSchedule()
+//        mainViewModel.getSchedule()
         setupTabLayout()
         observe()
     }
@@ -104,7 +104,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                             val date = LocalDate.parse(dateMogonili, formatter)
 
                             if (dateNow in date.minusDays(1)..date){
-                                observeWeather()
+//                                observeWeather()
                                 service?.showNotification(requireContext(),raceDay).toString()
                                 binding.apply {
                                     lastRaceContainer.visibility = View.VISIBLE
@@ -124,27 +124,27 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     }
 
 
-    private fun observeWeather() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                mainViewModel.weatherState.collect() {
-
-                    when(it){
-                        is Resource.Error -> {
-
-                        }
-                        is Resource.Loading -> {
-
-                        }
-                        is Resource.Success -> {
-                            binding.tvWeather.text = "${it.data.daily.temperature2mMax[1]} C\u00B0"
-                            weatherIcon(it.data.daily.weatherCode[1])
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    private fun observeWeather() {
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                mainViewModel.weatherState.collect() {
+//
+//                    when(it){
+//                        is Resource.Error -> {
+//
+//                        }
+//                        is Resource.Loading -> {
+//
+//                        }
+//                        is Resource.Success -> {
+//                            binding.tvWeather.text = "${it.data.daily.temperature2mMax[1]} C\u00B0"
+//                            weatherIcon(it.data.daily.weatherCode[1])
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     fun weatherIcon(data:Int){
         if ( data in 0..3 ){

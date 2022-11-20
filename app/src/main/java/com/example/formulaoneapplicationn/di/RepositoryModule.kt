@@ -29,18 +29,18 @@ abstract class RepositoryModule {
         driverStandingsRepositoryImpl: DriverStandingsRepositoryImpl
     ): CurrentDriversStandingsRepository
 
-    @Binds
-    @Singleton
-    //using for two usecases
-    abstract fun bindCircuitRepository(
-        lastRaceRepoImpl: LastRaceImpl
-    ): LastRaceRepository
+//    @Binds
+//    @Singleton
+//    //using for two usecases
+//    abstract fun bindCircuitRepository(
+//        lastRaceRepoImpl: LastRaceImpl
+//    ): LastRaceRepository
 
-    @Binds
-    @Singleton
-    abstract fun bindRaceScheduleRepository(
-        raceScheduleRepositoryImpl: RaceScheduleRepositoryImpl
-    ): RacesSheduleRepository
+//    @Binds
+//    @Singleton
+//    abstract fun bindRaceScheduleRepository(
+//        raceScheduleRepositoryImpl: RaceScheduleRepositoryImpl
+//    ): RacesSheduleRepository
 
     @Binds
     @Singleton

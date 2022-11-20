@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.example.formulaoneapplicationn.domain.model.TeamsDomain
 
 @Entity(tableName = "gundebi")
-data class TeamsDtoLocal(
+data class TeamsEntity(
     @PrimaryKey(autoGenerate = false)
     val teamId:String,
     @ColumnInfo(name="team_name")
@@ -18,7 +18,7 @@ data class TeamsDtoLocal(
 
 )
 
-fun TeamsDtoLocal.toModel(): TeamsDomain {
+fun TeamsEntity.toModel(): TeamsDomain {
     return TeamsDomain(
         teamId, teamName, teamNationality, url
     )
