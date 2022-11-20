@@ -31,10 +31,8 @@ class FragmentNewsViewModel @Inject constructor(
 
                 }
             }.launchIn(viewModelScope)
-
         }
     }
-
 }
 
 

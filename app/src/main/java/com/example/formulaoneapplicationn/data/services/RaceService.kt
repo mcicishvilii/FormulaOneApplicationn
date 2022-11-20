@@ -20,7 +20,7 @@ interface RaceService {
     ): Response<RaceResultsDto>
 
     @GET("constructors.json?limit=211")
-    suspend fun getDriversList(
+    suspend fun getTeams(
     ): Response<Teams>
 
     @GET("current/driverStandings.json")
@@ -29,8 +29,5 @@ interface RaceService {
         limit: String,
     ): Response<RealDriverStandingsDto>
 
-//    @GET("current/last/results.json")
-//    suspend fun getLastRaceInfo(
-//    ): Response<com.example.formulaone.data.model.drivers.last_race.LastRaceDto>
 
 }
