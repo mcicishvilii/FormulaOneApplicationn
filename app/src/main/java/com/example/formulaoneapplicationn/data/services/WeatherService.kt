@@ -17,6 +17,6 @@ interface WeatherService {
         daily: List<String>,
         @Query("timezone")
         timezone: String,
-    ): Response<WeatherDataDto.Daily>
+    ): Response<WeatherDataDto>
 
 }

@@ -1,5 +1,6 @@
 package com.example.formulaone.domain.use_case.weather
 
+import android.util.Log
 import com.example.formulaoneapplicationn.common.Resource
 import com.example.formulaoneapplicationn.data.model.weather.WeatherDataDto
 import com.example.formulaoneapplicationn.data.repository.RaceScheduleRepositoryImpl

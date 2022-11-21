@@ -38,7 +38,7 @@ class RaceScheduleRepositoryImpl @Inject constructor(
             emit(Resource.Loading(true))
             val response = weatherApi.getForecast(lat,long,listOf("temperature_2m_max","precipitation_sum","weathercode"),"Europe/Moscow")
             if (response.isSuccessful) {
-                emit(Resource.Success(response.body()!!.toDomain()))
+                emit(Resource.Success(response.body()!!.daily.toDomain()))
             }
         } catch (e: HttpException) {
             emit(Resource.Error(e.localizedMessage ?: "unexpected"))
