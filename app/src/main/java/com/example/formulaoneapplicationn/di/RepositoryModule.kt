@@ -36,11 +36,11 @@ abstract class RepositoryModule {
 //        lastRaceRepoImpl: LastRaceImpl
 //    ): LastRaceRepository
 
-//    @Binds
-//    @Singleton
-//    abstract fun bindRaceScheduleRepository(
-//        raceScheduleRepositoryImpl: RaceScheduleRepositoryImpl
-//    ): RacesSheduleRepository
+    @Binds
+    @Singleton
+    abstract fun bindRaceScheduleRepository(
+        raceScheduleRepositoryImpl: RaceScheduleRepositoryImpl
+    ): RacesSheduleRepository
 
     @Binds
     @Singleton

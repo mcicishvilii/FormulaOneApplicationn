@@ -1,5 +1,6 @@
 package com.example.formulaone.ui.mainFragment
 
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -31,7 +32,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     private lateinit var tabLayout: TabLayout
 
     override fun viewCreated() {
-//        mainViewModel.getSchedule()
+
+        mainViewModel.getRacing()
         setupTabLayout()
         observe()
     }
@@ -82,14 +84,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
                         }
                         is Resource.Success -> {
-                            binding.tv1stDriver.text = "${it.data[0].Circuit.circuitName}"
-                            binding.dateContainer.text = it.data[0].date
-                            binding.tvLocation.text = it.data[0].Circuit.Location.locality
+                            binding.tv1stDriver.text = it.data.last().Circuit.circuitName
+                            binding.dateContainer.text = it.data.last().date
+                            binding.tvLocation.text = it.data.last().Circuit.Location.locality
 
-
-                            val raceDay = "${it.data[0].Circuit.Location.country} on ${it.data[0].date} at ${it.data[0].time.dropLast(4)}"
-
-
+//                            val raceDay = "${it.data[0].Circuit.Location.country} on ${it.data[0].date} at ${it.data[0].time.dropLast(4)}"
 
                             val lat = it.data[0].Circuit.Location.lat.toDouble()
                             val long = it.data[0].Circuit.Location.long.toDouble()
@@ -98,14 +97,14 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
                             val dateNow = TimeFormaterIMPL().formatCurrentTime()
 
-                            val dateFromModel = it.data[0].date
-                            val dateMogonili = "2022-11-07"
+                            val dateFromModel = it.data.last().date
                             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-                            val date = LocalDate.parse(dateMogonili, formatter)
+                            val date = LocalDate.parse(dateFromModel, formatter)
+
 
                             if (dateNow in date.minusDays(1)..date){
-//                                observeWeather()
-                                service?.showNotification(requireContext(),raceDay).toString()
+                                observeWeather()
+//                                service?.showNotification(requireContext(),raceDay).toString()
                                 binding.apply {
                                     lastRaceContainer.visibility = View.VISIBLE
                                     lastRaceLocation.visibility = View.VISIBLE
@@ -124,27 +123,26 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     }
 
 
-//    private fun observeWeather() {
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                mainViewModel.weatherState.collect() {
-//
-//                    when(it){
-//                        is Resource.Error -> {
-//
-//                        }
-//                        is Resource.Loading -> {
-//
-//                        }
-//                        is Resource.Success -> {
-//                            binding.tvWeather.text = "${it.data.daily.temperature2mMax[1]} C\u00B0"
-//                            weatherIcon(it.data.daily.weatherCode[1])
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private fun observeWeather() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.weatherState.collect() {
+                    when(it){
+                        is Resource.Error -> {
+
+                        }
+                        is Resource.Loading -> {
+
+                        }
+                        is Resource.Success -> {
+                            binding.tvWeather.text = "${it.data.temperature2mMax[0]} C\u00B0"
+                            weatherIcon(it.data.weatherCode[0])
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     fun weatherIcon(data:Int){
         if ( data in 0..3 ){
